@@ -9,7 +9,7 @@ public class Ejercicio01 {
     
    Scanner s = new Scanner(System.in);
    
-   System.out.print("Introduzca el día de la semana: ");
+   System.out.print("Introduzca el NUMERO del día de la semana: ");
    int diaSemana = s.nextInt();
    String asignatura;
    switch(diaSemana) {
