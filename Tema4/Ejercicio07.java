@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class Ejercicio07 {
   public static void main(String[] args) {
+    
    Scanner s = new Scanner(System.in);
    
    System.out.print("Introduzca las tres notas separadas por un espacio: ");

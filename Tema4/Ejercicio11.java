@@ -8,6 +8,7 @@ public class Ejercicio11 {
   public static void main(String[] args) {
     
     Scanner s = new Scanner(System.in);
+    
     System.out.print("Introduzca la hora y los minutos separados por un espacio: ");
     int hora = s.nextInt();
     int minutos = s.nextInt();
