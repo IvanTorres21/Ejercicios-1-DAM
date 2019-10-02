@@ -41,7 +41,8 @@ public class Ejercicio01 {
       
       System.out.printf("\n%s", asignatura);
     } else {
-    System.out.printf("\nEl día %s tienes: %s", diaSemana, asignatura);
+      
+      System.out.printf("\nEl día %s tienes: %s", diaSemana, asignatura);
     }
   }
 }

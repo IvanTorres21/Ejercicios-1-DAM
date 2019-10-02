@@ -14,7 +14,7 @@ public class Ejercicio05 {
     double resultadoEcuacion = -b / a;
     if (a != 0) {
       
-      System.out.printf("\nEl resultado de %.2fx + %.2f = 0 es : %.2f", a, b, resultadoEcuacion);
+      System.out.printf("\nEl resultado de %.4fx + %.4f = 0 es : %.4f", a, b, resultadoEcuacion);
       
     } else {
       
