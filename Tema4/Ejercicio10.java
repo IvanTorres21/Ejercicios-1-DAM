@@ -8,6 +8,7 @@ public class Ejercicio10 {
   public static void main(String[] args) {
     
     Scanner s = new Scanner(System.in);
+    
     System.out.print("Dime el día y el número del mes en el que naciste separado por un espacio: ");
     int dia = s.nextInt();
     int mes = s.nextInt();

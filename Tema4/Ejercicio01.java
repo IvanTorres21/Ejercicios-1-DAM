@@ -6,6 +6,7 @@ import java.util.Scanner;
  */
 public class Ejercicio01 {
   public static void main(String[] args) {
+    
    Scanner s = new Scanner(System.in);
    
    System.out.print("Introduzca el día de la semana: ");

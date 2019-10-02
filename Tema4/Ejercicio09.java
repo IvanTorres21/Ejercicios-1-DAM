@@ -23,6 +23,7 @@ public class Ejercicio09 {
       
       double resultado1 = (-b + Math.pow(interiorRaiz, -2)) / (2 * a);
       double resultado2 = (-b - Math.pow(interiorRaiz, -2)) / (2 * a);
+      
       if (resultado1 == resultado2) {
         
         System.out.printf("\nTiene resultado único: %.4f", resultado1);
