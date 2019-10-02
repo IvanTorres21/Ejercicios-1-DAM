@@ -2,6 +2,8 @@
 En este repositorio están todos los ejercicios que he hecho del curso de grado superior de 
 **Desarrollo de Aplicaciones Multiplataforma**.
 
+Los ejercicios son del libro: [Aprende Java con Ejercicios](http://leanpub.com/aprendejava)
+
 ## Compilarlos
 
 Para compilar los ejercicios usa la siguiente linea en la consola:
