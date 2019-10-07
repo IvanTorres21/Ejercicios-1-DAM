@@ -25,6 +25,7 @@ public class Ejercicio22 {
       case "martes":
         numDia = 1;
         break;
+      case "miércoles":
       case "miercoles":
         numDia = 2;
         break;
