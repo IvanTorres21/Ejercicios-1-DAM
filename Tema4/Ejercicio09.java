@@ -21,7 +21,7 @@ public class Ejercicio09 {
       
     } else {
       
-      double resultado1 = (-b +Math.sqrt(interiorRaiz)) / (2 * a);
+      double resultado1 = (-b + Math.sqrt(interiorRaiz)) / (2 * a);
       double resultado2 = (-b - Math.sqrt(interiorRaiz)) / (2 * a);
       
       if (resultado1 == resultado2) {

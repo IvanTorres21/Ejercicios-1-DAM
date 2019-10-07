@@ -12,6 +12,7 @@ public class Ejercicio06 {
     System.out.print("Introduzca la altura desde la que cae el objeto en metros: ");
     double altura = s.nextDouble();
     double interiorRaiz = (2 * altura) / 9.18;
+    
     if (interiorRaiz < 0) {
       
       System.out.printf("\nEl resultado de la raiz es imaginario, por lo que no tiene solución");
