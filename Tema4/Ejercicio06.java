@@ -18,7 +18,7 @@ public class Ejercicio06 {
       
     } else {
       
-      double resultadoFinal = Math.pow(interiorRaiz, -2);
+      double resultadoFinal = Math.sqrt(interiorRaiz);
       System.out.printf("\nTardará en caer: %.2f segundos", resultadoFinal);
       
     }
