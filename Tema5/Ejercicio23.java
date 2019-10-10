@@ -13,6 +13,7 @@ public class Ejercicio23 {
     System.out.println("En este programa puedes introducir numeros hasta que la suma de todos sea 10000");
     double suma = 0;
     int cantNum = 0;
+    boolean maxAlcanzado = false;
     do {
       
       System.out.print("Introduce un número: ");
@@ -21,10 +22,10 @@ public class Ejercicio23 {
       if(suma > 10000) {
         
         suma -= num;
-        break;
+        maxAlcanzado = true;
       }
       cantNum++;
-    } while (suma <= 10000);
+    } while (suma <= 10000 && !maxAlcanzado);
     
     System.out.println("Has conseguido llegar a: " + suma);
     System.out.println("Has introducido " + cantNum + " numeros");

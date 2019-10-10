@@ -33,23 +33,3 @@ public class Ejercicio20 {
     }
   }
 }
-
-/*
-       for (int espacios = altura; espacios > i; espacios--) {
-        
-        System.out.print(" ");
-      }
-      System.out.print(caracter);
-      for (int j = (i+1)*2; j > 0; j--) {
-        
-        System.out.print(" ");
-      }
-      System.out.print(caracter + "\n");
-      if (i == altura) {
-        
-        for (int j = 0; j < (altura * 2); j++) {
-          
-          System.out.print(caracter);
-        }
-      }
-*/

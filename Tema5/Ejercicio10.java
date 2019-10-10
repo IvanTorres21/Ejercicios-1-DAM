@@ -21,7 +21,8 @@ public class Ejercicio10 {
       datosTotales += datoActual;
       cantidadDatos++;
     } while (datoActual >= 0);
-    //Las próximas dos lineas son para control de datos, seguro que puede arreglarse de otra manera.
+    // Las próximas dos lineas son para eliminar datos extra que se guardan,
+    // seguro que puede arreglarse de otra manera.
     cantidadDatos--;
     datosTotales -= datoActual;
     double media = datosTotales / (double) cantidadDatos;
