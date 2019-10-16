@@ -52,9 +52,10 @@ public class Ejercicio26 {
     
     double precioEntradasTotal = precioEntradasPar + precioEntradas;
     System.out.printf("\nTotal:                         %.2f", precioEntradasTotal);
-    double descuento = precioEntradasTotal * 0.1;
+    double descuento = 0;
     if (tarjeta == 's' || tarjeta == 'S') {
       
+      descuento = precioEntradasTotal * 0.1;
       System.out.printf("\nDescuento:                     %.2f", descuento);
     } 
     System.out.printf("\nA pagar:                       %.2f", precioEntradasTotal - descuento);
