@@ -10,10 +10,10 @@ public class Ejercicio52 {
   
     Scanner s = new Scanner(System.in);
     
-    int num;
+    long num;
     do {
     System.out.print("Introduzca un número entero positivo: ");
-    num = Integer.parseInt(s.nextLine());
+    num = Long.parseLong(s.nextLine());
     
     } while (num < 0);
     
@@ -21,16 +21,20 @@ public class Ejercicio52 {
     int cont = 1;
     do {
       
-      if (num / (int) Math.pow(10, cont) != 0) {
+      if (num / (long) Math.pow(10, cont) != 0) {
         
         cont++;
       }
-    } while (num / (int) Math.pow(10, cont) != 0);
+    } while (num / (long) Math.pow(10, cont) != 0);
+    if (cont > 1) {
+      
+      long aux = (num / (long) Math.pow(10, cont-1)) * (long) Math.pow(10, cont-1);
+      long nuevoNum = (num - aux) * 10;
+      nuevoNum += (aux / (long) Math.pow(10, cont-1));
+      System.out.println("El nuevo número es: " + nuevoNum);
+    } else {
     
-    int aux = (num / (int) Math.pow(10, cont-1)) * (int) Math.pow(10, cont-1);
-    int nuevoNum = (num - aux) * 10;
-    nuevoNum += (aux / (int) Math.pow(10, cont-1));
-    System.out.println("El nuevo número es: " + nuevoNum);
-    
+    System.out.println("El número es de un dígito: " + num);
+  }
   }
 }
