@@ -10,7 +10,27 @@ public class Ejercicio08 {
 
     for (int i = 0; i < 15; i++) {
 
-      for (int j = 0; j < 3; j++) {
+      if (i != 14) {
+        for (int j = 0; j < 3; j++) {
+        
+          double num = Math.random();
+          String resultado;
+          if (num > 0.5) {
+          
+            resultado = "1";
+          } else if (num <= 0.17) {
+          
+            resultado = "2";
+          } else if (num > 0.17 && num <= 0.5) {
+          
+            resultado = "x";
+          } else {
+          
+            resultado = "ERROR";
+          }
+          System.out.print("| " + resultado + " | ");
+        }
+      } else {
         
         double num = Math.random();
         String resultado;
@@ -28,7 +48,7 @@ public class Ejercicio08 {
           resultado = "ERROR";
         }
         System.out.print("| " + resultado + " | ");
-      }
+    }
       System.out.println();
     }
   }
