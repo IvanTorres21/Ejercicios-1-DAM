@@ -33,7 +33,7 @@ public class Ejercicio17 {
         
         if (i != 0 && i != altura-1) {
           
-          if ((Math.random() <= 0.1 && !pezColocado) || (i == altura-1 && !pezColocado)) {
+          if ((Math.random() <= 0.1 && !pezColocado) || (i == altura-2 && !pezColocado)) {
             
             System.out.print("&");
             pezColocado = true;
