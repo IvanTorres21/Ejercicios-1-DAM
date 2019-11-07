@@ -25,7 +25,8 @@ public class Ejercicio17 {
     
     
     ancho -= 2;
-    boolean pezColocado = false;
+    int posPezX = (int) (Math.random() * ancho);
+    int posPezY = (int) (Math.random() * (altura-1)) + 1;
     for (int i = 0; i < altura; i++) {
       
       System.out.print("*");
@@ -33,10 +34,9 @@ public class Ejercicio17 {
         
         if (i != 0 && i != altura-1) {
           
-          if ((Math.random() <= 0.1 && !pezColocado) || (i == altura-2 && !pezColocado)) {
+          if (posPezY == i && posPezX == j) {
             
             System.out.print("&");
-            pezColocado = true;
           } else {
             
             System.out.print(" ");
