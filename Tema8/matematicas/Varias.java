@@ -70,7 +70,7 @@ public class Varias {
   public static boolean esCapicua(long x) {
     
     long volteado = voltea(x);
-    if (x == volteado) {
+    if (x == volteado && digitos(x) > 1) {
       
       return true;
     }
