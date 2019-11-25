@@ -212,7 +212,12 @@ public class Varias {
     }while (x < num);
     return true;
   }
-  public static long sigPrimo (long num) {
+  /**
+   * Función que busca el primer primo desde un número
+   * @param num Número desde el que se empieza a buscar
+   * @return Valor primo más próximo (mayor que num)
+   */
+  public static long sigPrimo(long num) {
     
     do {
       
@@ -220,5 +225,50 @@ public class Varias {
     } while (!esPrimo(num));
     
     return num;
+  }
+  /**
+   * Función que pasa un número en binario a decimal
+   * @param num Número decimal a convertir
+   * @return Valor en decimal del número binario
+   */
+  public static long binarioDecimal(long num) {
+    
+    int exponente = 1;
+    long res = 0;
+    do {
+      
+      res +=  (digitoN(num, (digitos(num) - exponente)) * potencia(2, exponente));
+      exponente++;
+    } while (exponente < digitos(num));
+    return res;
+  }
+  /**
+   * Función que pasa de números decimales a binarios
+   * @param num Número en decimal a convertir
+   * @return número en binario
+   */
+  public static long decimalBinario(long num) {
+    
+    long res = 0;
+    long aux = num;
+    int numDig = 0;
+    do {
+      
+      aux = aux / 2;
+      numDig++;
+    } while (aux >= 1);
+    int exponente = numDig;
+    do {
+        
+      res += ((num % 2) * potencia(10, exponente));
+      num = num/2;
+      exponente--;
+    }while (num >= 1);
+    res = voltea(res);
+    if (digitos(res) != numDig) { //Para evitar la perdida de 0 después del voltea
+      
+      res = res * potencia(10, numDig-digitos(res));
+    }
+    return res;
   }
 }
