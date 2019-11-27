@@ -17,7 +17,14 @@ public class Varias {
    */
   public static long potencia(long b, int e) {
     
-    long pot = b;
+    long pot;
+    if (e != 0) {
+      
+      pot = b;
+    } else {
+      
+      return 1; //En caso de que se eleve algo a 0 el resultado será 1
+    }
     for (int i = 1; i < e; i++) {
       
       pot *= b;
@@ -227,9 +234,9 @@ public class Varias {
     return num;
   }
   /**
-   * Función que pasa un número en binario a decimal
-   * @param num Número decimal a convertir
-   * @return Valor en decimal del número binario
+   * Función que pasa un número en base x a base 10
+   * @param num Número en base x
+   * @return Número en
    */
   public static long binarioDecimal(long num) {
     
@@ -268,6 +275,166 @@ public class Varias {
     if (digitos(res) != numDig) { //Para evitar la perdida de 0 después del voltea
       
       res = res * potencia(10, numDig-digitos(res));
+    }
+    return res;
+  }
+  /**
+   * Función que pasa un número de base 10 a base 8
+   * @param num Numero en base 10
+   * @return Número en base 8
+   */
+  public static long decimalOctal(long num) {
+    
+    long res = 0;
+    int exponente = 0;
+    do {
+      
+      
+      res += (num % 8) * potencia(10, exponente);
+      exponente++;
+      num = num / 8;
+     if (num < 8) {
+       
+     }
+    } while (num >= 8);
+    res += num * potencia(10, exponente);
+    return res;
+  }
+  /**
+   * Función que pasa un número de base 8 a base 10
+   * @param num Número en base 8
+   * @return Número en base 10
+   */
+  public static long octalDecimal(long num) {
+    
+    long res = 0;
+    int exponente = 0;
+    int numDig = digitos(num);
+    do {
+      
+      long aux = digitoN(num, numDig-exponente);
+      res += (aux * potencia(8, exponente));
+      exponente++;
+    } while (exponente < numDig);
+    return res;
+  }
+  /**
+   * Función que pasa un número de base 10 a base 16
+   * @param num Número en base 10
+   * @return Número en base 16
+   */
+  public static String decimalHex(long num) {
+    
+    String res = "";
+    do {
+      
+      int aux = ((int)num % 16);
+      switch (aux) {
+        
+        case 10:
+          
+          res = "A" + res;
+          break;
+        case 11:
+          
+          res = "B" + res;
+          break;
+        case 12:
+          
+          res = "C" + res;
+          break;
+        case 13:
+          
+          res = "D" + res;
+          break;
+        case 14:
+          
+          res = "E" + res;
+          break;
+        case 15:
+          
+          res = "F" + res;
+          break;
+        default:
+          
+          res = Integer.toString(aux) + res;
+          break;
+      }
+      num /= 16;
+    } while (num > 16);
+    int aux = ((int)num % 16);
+      switch (aux) {
+        
+        case 10:
+          
+          res = "A" + res;
+          break;
+        case 11:
+          
+          res = "B" + res;
+          break;
+        case 12:
+          
+          res = "C" + res;
+          break;
+        case 13:
+          
+          res = "D" + res;
+          break;
+        case 14:
+          
+          res = "E" + res;
+          break;
+        case 15:
+          
+          res = "F" + res;
+          break;
+        default:
+          
+          res = Integer.toString(aux) + res;
+          break;
+      }
+    return res;
+  }
+  public static long hexDecimal(String num) {
+    
+    int j = 0;
+    long res = 0;
+    for (int i = (num.length()-1); i >= 0; i--) {
+      
+      char aux = num.charAt(i);
+      switch(aux) {
+        
+        case 'A':
+          
+          res += 10 * potencia(16, j);
+          break;
+        case 'B':
+          
+          res += 11 * potencia(16, j);
+          break;
+        case 'C':
+          
+          res += 12 * potencia(16, j);
+          break;
+        case 'D':
+          
+          res += 13 * potencia(16, j);
+          break;
+        case 'E':
+          
+          res += 14 * potencia(16, j);
+          break;
+        case 'F':
+          
+          res += 15 * potencia(16, j);
+          break;
+        default:
+          
+          res += Character.getNumericValue(aux) * potencia(16, j);
+          break;
+      }
+      j++;
     }
     return res;
   }
