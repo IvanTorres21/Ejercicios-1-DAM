@@ -1,0 +1,9 @@
+
+public enum FormaPico {
+
+  GENERALISTA, 
+  INSECTIVORO,
+  GRANIVORO,
+  NECTARIVORO,
+  FRUGIVORO
+}
