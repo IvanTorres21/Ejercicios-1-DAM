@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
   
-  public void main(String[] args) {
+  public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
     int opt = 0;
     Zona prin = new Zona(1000);
