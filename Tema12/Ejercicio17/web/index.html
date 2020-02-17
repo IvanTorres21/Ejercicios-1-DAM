@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Coches</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 style="text-align: center">Configura tu coche</h1>
+        <form style="text-align: center" action="coche.jsp" method="POST">
+            <h3 style="text-aling: center">Color tapicería</h3>
+            <input type="radio" id="blanco" value="b" name="col">
+            <label for="blanco">Blanco</label><br>
+            <input type="radio" id="negro" value="n" name="col"> 
+            <label for="negro">Negro</label><br>
+            <input type="radio" id="berenjena" value="be" name="col">
+            <label for="berenjena">Berenjena</label><br>
+            <br>
+            <h3 style="text-align: center">Material moldura</h3>
+            <input type="radio" id="madera" value="m" name="mat">
+            <label for="madera">Madera</label><br>
+            <input type="radio" id="carbono" value="c" name="mat">
+            <label for="carbono">Carbono</label><br>
+            <br>
+            <input type="submit" value="Aceptar">
+        </form>
+    </body>
+</html>
