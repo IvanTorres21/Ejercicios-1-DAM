@@ -298,7 +298,12 @@ public class Code {
     }
   }
   
-  public static void quitaComentarios(String name, String name2) {
+  /**
+   * Función que elimina los comentarios de un codigo java
+   * @param name nombre del archivo del que se van a eliminar los comentarios
+   * @param name2 nombre del archivo que se creara
+   */
+  public static void commentRemover(String name, String name2) {
     
     name += ".java";
     name2 += ".java";
@@ -348,6 +353,33 @@ public class Code {
       BufferedWriter br = new BufferedWriter(new FileWriter(name2));
       br.write(text);
       br.close();
+    } catch(FileNotFoundException fnfe) {
+      
+      System.out.println("Couldn't find file");
+      System.out.println("Remember that you don't have to write .txt!");
+    } catch (IOException ioe) {
+      
+      System.out.println("There were problems with the Input Output actions!");
+    }
+  }
+  public static void findWord(String name, String word) {
+    
+    name += ".txt";
+    try {
+      
+      BufferedReader bf = new BufferedReader(new FileReader(name));
+      String line = bf.readLine();
+      int cant = 0;
+      while (line != null) {
+        
+        if (line.contains(word)) {
+          
+          cant++;
+        }
+        line = bf.readLine();
+      }
+      bf.close();
+      System.out.println("Cantidad de apariciones de " + word + ": " + cant);
     } catch(FileNotFoundException fnfe) {
       
       System.out.println("Couldn't find file");

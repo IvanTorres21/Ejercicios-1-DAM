@@ -16,7 +16,7 @@ public class ej5 {
       System.out.println("Parameters are missing! Expected 2 parameters..."); //Otro comentario
     } else { //Maravillo comentario
       
-      Code.quitaComentarios(args[0], args[1]);
+      Code.commentRemover(args[0], args[1]);
     }
   }
 }
