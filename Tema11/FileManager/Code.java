@@ -7,6 +7,8 @@ import java.io.FilenameFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Code {
@@ -14,6 +16,7 @@ public class Code {
   /**
    * Función que lee un fichero de texto y lo imprime por pantalla
    * @param name Nombre del fichero de texto (sin extensión).
+   * return String con el interior del texto
    */
   public static String readFile(String name) {
 
@@ -259,7 +262,10 @@ public class Code {
       System.out.println("No se ha podido acceder al archivo...");
     }
   }
-  
+  /**
+   * Funcion que ordena las palabras de un fichero de texto y las escribe en otro
+   * @param name Nombre del archivo de texto
+   */
   public static void sortWords(String name) {
     
     String name2 = name + "-sorted.txt";
@@ -267,11 +273,88 @@ public class Code {
     try {
       
       BufferedReader bf = new BufferedReader(new FileReader(name));
+      ArrayList<String> text = new ArrayList<String>();
+      String actWord = bf.readLine();
+      while (actWord != null) {
+        
+        text.add(actWord);
+        actWord = bf.readLine();
+      }
+      Collections.sort(text);
+      bf.close();
       BufferedWriter br = new BufferedWriter(new FileWriter(name2));
+      for (String n : text) {
+        
+        br.write(n + "\n");
+      }
+      br.close();
     } catch(FileNotFoundException fnfe) {
       
       System.out.println("Couldn't find file");
-      System.out.println("")
+      System.out.println("Remember that you don't have to write .txt!");
+    } catch (IOException ioe) {
+      
+      System.out.println("There were problems with the Input Output actions!");
+    }
+  }
+  
+  public static void quitaComentarios(String name, String name2) {
+    
+    name += ".java";
+    name2 += ".java";
+    try {
+      
+      String text = "";
+      BufferedReader bf = new BufferedReader(new FileReader(name));
+      String line = bf.readLine();
+      boolean comentario = false;
+      while (line != null) {
+        
+        if (line.contains("/*")) {
+          
+          comentario = true;
+        }
+        if (!comentario) {
+          
+          if (line.contains("//")) {
+            
+            char[] line2 = line.toCharArray();
+            int beforeComment = 0;
+            // Encontramos el punto en el que empiezan los comentarios
+            for (int i  = 0; i < line2.length; i++) {              
+              if (i + 1 != line2.length) {
+                if (line2[i] == '/' && line2[i+1] == '/') {
+                  
+                  beforeComment = i;
+                }
+              }
+            }
+            // Copiamos los caracteres a la linea
+            line = "";
+            for (int i = 0; i < beforeComment; i++) {
+              
+              line += "" + line2[i];
+            }
+          }
+          text += line +"\n";
+        }
+        if (line.contains("*/")) {
+          
+          comentario = false;
+        }
+        line = bf.readLine();
+      }
+      bf.close();
+      BufferedWriter br = new BufferedWriter(new FileWriter(name2));
+      br.write(text);
+      br.close();
+    } catch(FileNotFoundException fnfe) {
+      
+      System.out.println("Couldn't find file");
+      System.out.println("Remember that you don't have to write .txt!");
+    } catch (IOException ioe) {
+      
+      System.out.println("There were problems with the Input Output actions!");
     }
   }
 }
